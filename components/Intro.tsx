@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 type Phase = 'car' | 'logo' | 'done'
 
-const GREEN = '#2b8a34'
+const GREEN = '#1f6526'
 const INK = '#141813'
 
 export default function Intro() {

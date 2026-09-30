@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
-const GREEN = '#2b8a34'
+const GREEN = '#1f6526'
 const INK = '#141813'
 const BORDER = '#e2e7e1'
 

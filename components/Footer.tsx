@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const GREEN = '#2b8a34'
+const GREEN = '#1f6526'
 const INK = '#141813'
 const BORDER = '#e2e7e1'
 const M = "var(--font-body), sans-serif"
@@ -75,10 +75,10 @@ export default function Footer() {
 
       {/* BOTTOM BAR */}
       <div style={{ padding: '18px clamp(20px, 5vw, 80px)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-        <p style={{ fontFamily: M, fontSize: '.78rem', color: '#79827a', margin: 0 }}>
+        <p style={{ fontFamily: M, fontSize: '.78rem', color: '#5d655d', margin: 0 }}>
           © {new Date().getFullYear()} ABT Auto Body Technicians. All rights reserved.
         </p>
-        <p style={{ fontFamily: M, fontSize: '.78rem', color: '#79827a', margin: 0 }}>
+        <p style={{ fontFamily: M, fontSize: '.78rem', color: '#5d655d', margin: 0 }}>
           Managed by{' '}
           <a href="https://empreusitsupport.com.au" target="_blank" rel="noopener noreferrer"
             style={{ color: GREEN, textDecoration: 'none', fontWeight: 700 }}>

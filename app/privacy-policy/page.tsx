@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const INK = "#141813";
 const TEXT = "#2e342e";
 const MUTED = "#5d655d";
-const GREEN_DARK = "#2b8a34";
+const GREEN_DARK = "#1f6526";
 const BAND = "#f3f6f2";
 
 const LAST_UPDATED = "30 September 2026";

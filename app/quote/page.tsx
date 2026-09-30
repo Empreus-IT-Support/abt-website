@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react'
 
 const GREEN = '#44b94a'
-const GREEN_DARK = '#2b8a34'
+const GREEN_DARK = '#1f6526'
 const INK = '#141813'
 const BG = '#ffffff'
 const BAND = '#f3f6f2'

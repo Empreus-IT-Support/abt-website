@@ -18,9 +18,9 @@ const reasons = [
 ]
 
 const services = [
-  { title: 'Smash Repairs', desc: 'We take pride in our workmanship from the very beginning of repairs to the completion when our valued clients collect their vehicle.', href: '/services', cta: 'Read More' },
-  { title: 'Repair Process', desc: 'Bring your vehicle and claim number in — we take images in under 15 minutes and organise the entire process from there.', href: '/services', cta: 'Read More' },
-  { title: 'Our Services', desc: 'Browse through to see the range of services available at our Mitchell workshop.', href: '/services', cta: 'See More' },
+  { title: 'Smash Repairs', desc: 'We take pride in our workmanship from the very beginning of repairs to the completion when our valued clients collect their vehicle.', href: '/services', cta: 'About our smash repairs' },
+  { title: 'Repair Process', desc: 'Bring your vehicle and claim number in — we take images in under 15 minutes and organise the entire process from there.', href: '/services', cta: 'How our repair process works' },
+  { title: 'Our Services', desc: 'Browse through to see the range of services available at our Mitchell workshop.', href: '/services', cta: 'Browse all our services' },
   { title: 'Vehicle Damaged?', desc: 'Feel free to contact us and we would be pleased to answer any questions you may have.', href: '/contact', cta: 'Contact Us' },
 ]
 
@@ -31,7 +31,7 @@ const testimonials = [
 ]
 
 const GREEN = '#44b94a'
-const GREEN_DARK = '#2b8a34'
+const GREEN_DARK = '#1f6526'
 const INK = '#141813'
 const BG = '#ffffff'
 const BAND = '#f3f6f2'
@@ -204,7 +204,7 @@ export default function Home() {
             </FadeUp>
             <FadeUp delay={0.5}>
               <Link href="/about" style={{ ...M, fontSize: '.72rem', fontWeight: 700, color: GREEN_DARK, textDecoration: 'none', letterSpacing: '2px', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ width: 24, height: 1, background: GREEN_DARK, display: 'inline-block' }} />Learn more
+                <span style={{ width: 24, height: 1, background: GREEN_DARK, display: 'inline-block' }} />More about ABT
               </Link>
             </FadeUp>
           </div>
