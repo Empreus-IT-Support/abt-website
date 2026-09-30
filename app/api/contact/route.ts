@@ -1,13 +1,11 @@
-import { Resend } from 'resend'
+import { atlasConfigured, sendAtlasEmail } from '@/lib/atlas'
 import { NextRequest, NextResponse } from 'next/server'
 import { sanitizeFormBody } from '../utils'
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
+  if (!atlasConfigured()) {
     return NextResponse.json({ error: 'Email service is not configured' }, { status: 503 })
   }
-  const resend = new Resend(apiKey)
   try {
     const body = sanitizeFormBody(await req.json())
     if (body.website) {
@@ -16,34 +14,36 @@ export async function POST(req: NextRequest) {
     }
     const { name, email, phone, mobile, make, model, year, message } = body
 
-    const { error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM ?? 'ABT Website <noreply@autobodytech.net.au>',
+    const result = await sendAtlasEmail({
+      // Must be a bare address Atlas authorises for this key — see lib/atlas.ts.
+      from: process.env.CONTACT_FROM ?? 'DoNotReply@autobodytech.net.au',
       to: process.env.CONTACT_RECIPIENT ?? 'admin@autobodytech.net.au',
       replyTo: email,
       subject: `New Contact Form Submission — ${name}`,
-      html: `
-        <h2 style="color:#6b8f47">New Contact Form Submission</h2>
-        <hr />
-        <h3>Contact Details</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Mobile:</strong> ${mobile || 'N/A'}</p>
-        <hr />
-        <h3>Vehicle Information</h3>
-        <p><strong>Make:</strong> ${make || 'N/A'}</p>
-        <p><strong>Model:</strong> ${model || 'N/A'}</p>
-        <p><strong>Year:</strong> ${year || 'N/A'}</p>
-        <hr />
-        <h3>Message</h3>
-        <p>${message}</p>
-        <hr />
-        <p style="color:#888;font-size:12px">Sent from autobodytech.net.au contact form</p>
-      `,
+      text: [
+        'New Contact Form Submission',
+        '',
+        'Contact Details',
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Mobile: ${mobile || 'N/A'}`,
+        '',
+        'Vehicle Information',
+        `Make: ${make || 'N/A'}`,
+        `Model: ${model || 'N/A'}`,
+        `Year: ${year || 'N/A'}`,
+        '',
+        'Message',
+        message,
+        '',
+        'Sent from the autobodytech.net.au contact form',
+      ].join('\n'),
     })
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 400 })
+    if (!result.ok) {
+      console.error(`[contact] Atlas send failed ${result.status}: ${result.detail}`)
+      return NextResponse.json({ error: 'Something went wrong' }, { status: 502 })
     }
 
     return NextResponse.json({ success: true })

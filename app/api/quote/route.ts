@@ -1,13 +1,11 @@
-import { Resend } from 'resend'
+import { atlasConfigured, sendAtlasEmail } from '@/lib/atlas'
 import { NextRequest, NextResponse } from 'next/server'
 import { sanitizeFormBody } from '../utils'
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
+  if (!atlasConfigured()) {
     return NextResponse.json({ error: 'Email service is not configured' }, { status: 503 })
   }
-  const resend = new Resend(apiKey)
   try {
     const body = sanitizeFormBody(await req.json())
     if (body.website) {
@@ -20,41 +18,43 @@ export async function POST(req: NextRequest) {
       insurer, claimNumber, damage,
     } = body
 
-    const { error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM ?? 'ABT Website <noreply@autobodytech.net.au>',
+    const result = await sendAtlasEmail({
+      // Must be a bare address Atlas authorises for this key — see lib/atlas.ts.
+      from: process.env.CONTACT_FROM ?? 'DoNotReply@autobodytech.net.au',
       to: process.env.CONTACT_RECIPIENT ?? 'admin@autobodytech.net.au',
       replyTo: email,
       subject: `New Quote Request — ${name}`,
-      html: `
-        <h2 style="color:#6b8f47">New Quote Request</h2>
-        <hr />
-        <h3>Contact Details</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Mobile:</strong> ${mobile || 'N/A'}</p>
-        <hr />
-        <h3>Vehicle Information</h3>
-        <p><strong>Make:</strong> ${make || 'N/A'}</p>
-        <p><strong>Model:</strong> ${model || 'N/A'}</p>
-        <p><strong>Year:</strong> ${year || 'N/A'}</p>
-        <p><strong>Colour:</strong> ${colour || 'N/A'}</p>
-        <p><strong>Registration No:</strong> ${rego || 'N/A'}</p>
-        <p><strong>VIN:</strong> ${vin || 'N/A'}</p>
-        <hr />
-        <h3>Insurer Information</h3>
-        <p><strong>Insurer:</strong> ${insurer || 'N/A'}</p>
-        <p><strong>Claim Number:</strong> ${claimNumber || 'N/A'}</p>
-        <hr />
-        <h3>Description of Damage</h3>
-        <p>${damage || 'N/A'}</p>
-        <hr />
-        <p style="color:#888;font-size:12px">Sent from autobodytech.net.au quote form</p>
-      `,
+      text: [
+        'New Quote Request',
+        '',
+        'Contact Details',
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Mobile: ${mobile || 'N/A'}`,
+        '',
+        'Vehicle Information',
+        `Make: ${make || 'N/A'}`,
+        `Model: ${model || 'N/A'}`,
+        `Year: ${year || 'N/A'}`,
+        `Colour: ${colour || 'N/A'}`,
+        `Registration No: ${rego || 'N/A'}`,
+        `VIN: ${vin || 'N/A'}`,
+        '',
+        'Insurer Information',
+        `Insurer: ${insurer || 'N/A'}`,
+        `Claim Number: ${claimNumber || 'N/A'}`,
+        '',
+        'Description of Damage',
+        damage || 'N/A',
+        '',
+        'Sent from the autobodytech.net.au quote form',
+      ].join('\n'),
     })
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 400 })
+    if (!result.ok) {
+      console.error(`[quote] Atlas send failed ${result.status}: ${result.detail}`)
+      return NextResponse.json({ error: 'Something went wrong' }, { status: 502 })
     }
 
     return NextResponse.json({ success: true })
