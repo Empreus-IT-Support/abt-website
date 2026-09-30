@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Intro from '../components/Intro'
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   variable: '--font-body',
@@ -119,6 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
