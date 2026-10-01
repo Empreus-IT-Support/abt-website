@@ -255,7 +255,7 @@ export default function About() {
             {
               title: 'Privacy Policy',
               body: 'Auto Body Technicians (ABT) is committed to providing quality services to you and this policy outlines our ongoing obligations to you in respect of how we manage your Personal Information.',
-              link: { label: 'Read Privacy Policy →', href: '/files/privacy-policy.pdf' },
+              link: { label: 'Read Privacy Policy →', href: '/privacy-policy' },
             },
           ].map(({ title, body, link }, i) => (
             <FadeUp key={title} delay={i * 0.12}>

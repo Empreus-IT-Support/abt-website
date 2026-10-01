@@ -76,7 +76,8 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div style={{ padding: '18px clamp(20px, 5vw, 80px)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
         <p style={{ fontFamily: M, fontSize: '.78rem', color: '#5d655d', margin: 0 }}>
-          © {new Date().getFullYear()} ABT Auto Body Technicians. All rights reserved.
+          © {new Date().getFullYear()} ABT Auto Body Technicians. All rights reserved.{' '}
+          <Link href="/privacy-policy" style={{ color: GREEN, textDecoration: 'none', fontWeight: 600 }}>Privacy Policy</Link>
         </p>
         <p style={{ fontFamily: M, fontSize: '.78rem', color: '#5d655d', margin: 0 }}>
           Managed by{' '}
