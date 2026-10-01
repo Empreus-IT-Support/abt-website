@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | ABT Auto Body Technicians',
   },
   description:
-    'ABT Auto Body Technicians is a privately owned boutique smash repair business serving Canberra motorists since 1988. Private, fleet, commercial and insurance work — all repairs guaranteed.',
+    'ABT Auto Body Technicians is a privately owned boutique smash repair business serving Canberra motorists since 1988. Private, fleet, commercial and insurance work, with all repairs guaranteed.',
   keywords: [
     'smash repairs Canberra',
     'panel beater Mitchell ACT',
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
     siteName: 'ABT Auto Body Technicians',
     title: 'ABT Auto Body Technicians | Smash Repairs, Mitchell, Canberra ACT',
     description:
-      "Canberra's trusted smash repairers since 1988. Private, fleet, commercial and insurance work — all repairs guaranteed.",
+      "Canberra's trusted smash repairers since 1988. Private, fleet, commercial and insurance work, with all repairs guaranteed.",
     locale: 'en_AU',
     images: [
       {
         url: '/og.jpg',
         width: 1200,
         height: 630,
-        alt: 'ABT Auto Body Technicians — Smash Repairs, Mitchell, Canberra',
+        alt: 'ABT Auto Body Technicians smash repairs, Mitchell, Canberra',
       },
     ],
   },
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ABT Auto Body Technicians | Smash Repairs, Mitchell, Canberra ACT',
     description:
-      "Canberra's trusted smash repairers since 1988. Private, fleet, commercial and insurance work — all repairs guaranteed.",
+      "Canberra's trusted smash repairers since 1988. Private, fleet, commercial and insurance work, with all repairs guaranteed.",
     images: ['/og.jpg'],
   },
   robots: {

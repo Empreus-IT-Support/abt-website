@@ -74,8 +74,8 @@ const labelStyle = {
 
 const photoTips = [
   { title: 'Overall Shot', desc: 'Take an overall picture where the complete car is in shot and the damaged section is in the centre.' },
-  { title: 'Not Too Close', desc: "Don't take images too close up — it's important that we can see as much of the damaged area as possible." },
-  { title: 'Good Lighting', desc: 'Take photos under bright lights or natural sunlight — make sure the damaged area isn\'t in shadow.' },
+  { title: 'Not Too Close', desc: "Don't take images too close up. It's important that we can see as much of the damaged area as possible." },
+  { title: 'Good Lighting', desc: 'Take photos under bright lights or natural sunlight. Make sure the damaged area isn\'t in shadow.' },
 ]
 
 export default function Quote() {
@@ -239,14 +239,14 @@ export default function Quote() {
                 <textarea ref={damageRef} placeholder="Describe any damage not visible in photos..." style={{ ...inputStyle, minHeight: 110, resize: 'vertical' }} />
               </Section>
 
-              <Section num={4} title="Photos — Optional">
+              <Section num={4} title="Photos (Optional)">
                 <p style={{ ...M, fontSize: '.88rem', color: MUTED, lineHeight: 1.8, marginBottom: 20 }}>
                   Sending suitable photos will give us the ability to quote your job immediately.
                 </p>
                 <div style={{ height: 180, overflow: 'hidden', marginBottom: 24, border: `1px solid ${BORDER}` }}>
                   <img
                     src="/images/photo-1580273916550-e323be2ae537.jpg"
-                    alt="Example photo — complete car in shot"
+                    alt="Example photo with the complete car in shot"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   />
                 </div>

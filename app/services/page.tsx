@@ -59,11 +59,11 @@ const support = [
   },
   {
     title: '24/7 Towing',
-    body: 'Around-the-clock towing is provided by Discount Towing Canberra — 24 hours a day, 365 days a year. Phone 0411 259 945.',
+    body: 'Around-the-clock towing is provided by Discount Towing Canberra, 24 hours a day, 365 days a year. Phone 0411 259 945.',
   },
   {
     title: 'Simple Repair Process',
-    body: 'Bring your vehicle and claim number in — we take images in under 15 minutes and organise the entire process from there.',
+    body: 'Bring your vehicle and claim number in. We take images in under 15 minutes and organise the entire process from there.',
   },
 ]
 
@@ -151,7 +151,7 @@ export default function Services() {
           <div>
             <h2 style={{ ...D, fontSize: 'clamp(1.55rem, 3.5vw, 1.8rem)', fontWeight: 900, color: '#fff', margin: '0 0 8px', textTransform: 'uppercase' }}>Ready to get started?</h2>
             <p style={{ ...M, fontSize: '.96rem', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.8 }}>
-              Request a quote online or get in touch — we'll take it from there.
+              Request a quote online or get in touch. We'll take it from there.
             </p>
           </div>
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', flexShrink: 0 }}>

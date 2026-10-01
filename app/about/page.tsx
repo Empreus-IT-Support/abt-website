@@ -55,7 +55,7 @@ const Label = ({ text, light = false }: { text: string, light?: boolean }) => (
 )
 
 const awards = [
-  { num: '01', text: 'Primary Repairer of the Year — twice awarded by a major fleet company, "in recognition of quality repairs and customer service"' },
+  { num: '01', text: 'Primary Repairer of the Year, twice awarded by a major fleet company, "in recognition of quality repairs and customer service"' },
   { num: '02', text: 'Nominated for Paint and Panel Autobody Repairer of the Year (2013)' },
   { num: '03', text: "Two apprentices have won 'Apprentice of the Year' in Canberra since inception" },
   { num: '04', text: 'Member of the Motor Trades Association since inception' },

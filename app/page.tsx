@@ -19,15 +19,15 @@ const reasons = [
 
 const services = [
   { title: 'Smash Repairs', desc: 'We take pride in our workmanship from the very beginning of repairs to the completion when our valued clients collect their vehicle.', href: '/services', cta: 'About our smash repairs' },
-  { title: 'Repair Process', desc: 'Bring your vehicle and claim number in — we take images in under 15 minutes and organise the entire process from there.', href: '/services', cta: 'How our repair process works' },
+  { title: 'Repair Process', desc: 'Bring your vehicle and claim number in. We take images in under 15 minutes and organise the entire process from there.', href: '/services', cta: 'How our repair process works' },
   { title: 'Our Services', desc: 'Browse through to see the range of services available at our Mitchell workshop.', href: '/services', cta: 'Browse all our services' },
   { title: 'Vehicle Damaged?', desc: 'Feel free to contact us and we would be pleased to answer any questions you may have.', href: '/contact', cta: 'Contact Us' },
 ]
 
 const testimonials = [
-  { quote: 'The best repair shop I have ever been to. Staff members are all very professional — after the repairs, the vehicle was as good as new.', sign: 'Tom C' },
-  { quote: 'I expected the process to be lengthy and stressful — thank you for ensuring it was not. The customer service was excellent and my Mazda looks beautiful.', sign: 'Murrumbateman customer' },
-  { quote: "From the quotation to the repairs, very short down time — and the finished product is 'WOW'.", sign: 'Satisfied customer' },
+  { quote: 'The best repair shop I have ever been to. Staff members are all very professional. After the repairs, the vehicle was as good as new.', sign: 'Tom C' },
+  { quote: 'I expected the process to be lengthy and stressful. Thank you for ensuring it was not. The customer service was excellent and my Mazda looks beautiful.', sign: 'Murrumbateman customer' },
+  { quote: "From the quotation to the repairs, very short down time, and the finished product is 'WOW'.", sign: 'Satisfied customer' },
 ]
 
 const GREEN = '#44b94a'
@@ -129,7 +129,7 @@ export default function Home() {
               </h1>
               <div style={{ width: 56, height: 4, background: GREEN, marginBottom: 26 }} />
               <p style={{ ...M, fontSize: '1.1rem', fontWeight: 400, color: TEXT, lineHeight: 1.85, marginBottom: 38, maxWidth: 500 }}>
-                Serving Canberra's motorists since 1988 — private, fleet, commercial and insurance work. One of the most dependable smash repairers in the Northside.
+                Serving Canberra's motorists since 1988 with private, fleet, commercial and insurance work. One of the most dependable smash repairers in the Northside.
               </p>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, animation: 'fadeup 0.8s ease 0.6s both' }}>
@@ -196,7 +196,7 @@ export default function Home() {
                 Auto Body Technicians has been operating in Canberra since October 1988. We are a privately owned boutique smash repairs business specialising in quality repairs.
               </p>
               <p style={{ ...M, fontSize: '1.02rem', fontWeight: 400, color: TEXT, lineHeight: 1.9, marginBottom: 14 }}>
-                Customer service is a priority — we are proud of the strong relationships we have with our clients, insurance companies, fleet companies and suppliers.
+                Customer service is a priority. We are proud of the strong relationships we have with our clients, insurance companies, fleet companies and suppliers.
               </p>
               <p style={{ ...M, fontSize: '1.02rem', fontWeight: 400, color: TEXT, lineHeight: 1.9, marginBottom: 28 }}>
                 Auto Body Technicians carry out repairs for all major insurance companies and have won the Primary Repairer of the Year award twice.
@@ -300,7 +300,7 @@ export default function Home() {
               </div>
               <h2 style={{ ...D, fontSize: 'clamp(1.7rem, 3.8vw, 2rem)', fontWeight: 900, color: '#fff', margin: '0 0 8px', textTransform: 'uppercase' }}>Has your vehicle been damaged?</h2>
               <p style={{ ...M, fontSize: '.96rem', fontWeight: 400, color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.8 }}>
-                Contact us today — we make the repair process as simple as possible. All repairs are guaranteed.
+                Contact us today. We make the repair process as simple as possible. All repairs are guaranteed.
               </p>
             </div>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', flexShrink: 0 }}>
